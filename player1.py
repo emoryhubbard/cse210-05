@@ -17,10 +17,10 @@ class Player1:
         self._position = Point(quarter_of_width, half_of_height)
         self._velocity = Point(0,0)
         self._trails = []
-        
+
         trail = Drawable()
         trail.set_position(self._position)
-        trail.set_velocity(self._velocity)
+        trail.set_velocity(Point(0, 0))
         trail.set_text("@")
         trail.set_color(self._color)
         self.add_trail(trail)
