@@ -1,0 +1,4 @@
+MAX_X = 1500
+MAX_Y = 900
+TITLE = "Cycle"
+FRAME_RATE = 60

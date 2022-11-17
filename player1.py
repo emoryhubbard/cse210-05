@@ -2,16 +2,18 @@ import constants
 from color import Color
 from point import Point
 
-class player1:
+class Player1:
 
 
 
     def __init__(self):
 
-        self._text = ""
+        self._text = "@"
         self._font_size = 15
         self._color = Color(245,245,245)
-        self._position = Point(0,0)
+        quarter_of_width = int(constants.MAX_X / 4)
+        half_of_height = int(constants.MAX_Y / 2)
+        self._position = Point(quarter_of_width, half_of_height)
         self._velocity = Point(0,0)
     
     def get_color(self):
@@ -22,7 +24,7 @@ class player1:
 
         return self._font_size
 
-    def get_postion(self):
+    def get_position(self):
 
         return self._position
 
@@ -33,7 +35,7 @@ class player1:
     def move_next(self):
 
         x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
-        y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_X
+        y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
 
     def set_color(self,color):
 
@@ -53,3 +55,6 @@ class player1:
     def set_text(self, text):
 
         self._text = text
+
+    def get_text(self):
+        return self._text
