@@ -13,8 +13,16 @@ class OutputService:
     def clear_buffer(self):
         pyray.begin_drawing()
         pyray.clear_background(pyray.BLACK)
-        
+    
     def draw_actor(self, actor):
+        if actor.has_actors() == True:
+            for member in actor.get_actors():
+                self.draw_single_actor(member)
+        else:
+            for trail in actor._trails:
+                self.draw_single_actor(trail)
+
+    def draw_single_actor(self, actor):
         text = actor.get_text()
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()

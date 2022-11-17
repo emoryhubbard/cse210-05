@@ -5,7 +5,7 @@ class DrawActorsAction(Action):
     def __init__(self, output_service):
         self._output_service = output_service
 
-    def execute(self, cast, script):
+    def execute(self, cast):
         player1 = cast.get_first_actor("players")
 
         self._output_service.clear_buffer()

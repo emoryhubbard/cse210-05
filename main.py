@@ -3,8 +3,10 @@ from player1 import Player1
 from script import Script
 from move_actors_action import MoveActorsAction
 from draw_actors_action import DrawActorsAction
+from control_actors_action import ControlActorsAction
 from director import Director
 from OutputService import OutputService
+from InputService import InputService
 
 def main():
 
@@ -13,9 +15,10 @@ def main():
     #add more actors here
 
     output_service = OutputService()
-    #add other service here
+    input_service = InputService()
 
     script = Script()
+    script.add_action("input", ControlActorsAction(input_service))
     script.add_action("update", MoveActorsAction())
     script.add_action("output", DrawActorsAction(output_service))
     #add more scripts here, like collisions
