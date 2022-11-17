@@ -1,4 +1,4 @@
-
+from drawable import Drawable
 class Score1(Drawable):
     def __init__(self, output_service):
         super().__init__(output_service)
