@@ -16,8 +16,8 @@ class Player1:
         half_of_height = int(constants.MAX_Y / 2)
         self._position = Point(quarter_of_width, half_of_height)
         self._velocity = Point(0,0)
-
         self._trails = []
+        
         trail = Drawable()
         trail.set_position(self._position)
         trail.set_velocity(self._velocity)
