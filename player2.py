@@ -10,7 +10,7 @@ class player2:
 
         self._text = ""
         self._font_size = 15
-        self._color = Color(245,245,245)
+        self._color = Color(300,300,300)
         self._position = Point(0,0)
         self._velocity = Point(0,0)
     
