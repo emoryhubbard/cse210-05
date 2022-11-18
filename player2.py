@@ -3,7 +3,7 @@ from color import Color
 from point import Point
 from drawable import Drawable
 
-class Player1:
+class player2:
 
 
 

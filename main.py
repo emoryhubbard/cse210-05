@@ -15,6 +15,7 @@ def main():
 
     cast = Cast()
     cast.add_actor("players", Player1())
+    cast.add_actor("players", player2())
     #add more actors here
 
     output_service = OutputService()
