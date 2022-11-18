@@ -18,9 +18,9 @@ class handle_collision_actions(Action):
 
     def _handle_segment_collision(self, collision_cast):
 
-        snake = collision_cast
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1]
+        bike = collision_cast
+        head = bike.get_segments()[0]
+        segments = bike.get_segments()[1]
         for segment in segments:
             if head.get_position().equals(segment.get_position()):
                 self._game_over = True
@@ -29,7 +29,7 @@ class handle_collision_actions(Action):
     def _handle_game_over(self, collision_cast):
 
         if self._game_over:
-            snake = collision_cast("snakes")
+            bike = collision_cast("bike")
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x,y)
