@@ -1,15 +1,15 @@
-from cast import Cast
-from player1 import Player1
-from player2 import player2
-from script import Script
-from move_actors_action import MoveActorsAction
-from draw_actors_action import DrawActorsAction
-from control_actors_action import ControlActorsAction
-from director import Director
-from OutputService import OutputService
-from InputService import InputService
+from casting.cast import Cast
+from casting.player1 import Player1
+from casting.player2 import player2
+from scripting.script import Script
+from scripting.move_actors_action import MoveActorsAction
+from scripting.draw_actors_action import DrawActorsAction
+from scripting.control_actors_action import ControlActorsAction
+from Cycle.director import Director
+from services.OutputService import OutputService
+from services.InputService import InputService
 
-from handle_collisions_action import handle_collision_actions
+from scripting.handle_collisions_action import handle_collision_actions
 
 def main():
 
