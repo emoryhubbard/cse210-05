@@ -8,6 +8,8 @@ from director import Director
 from OutputService import OutputService
 from InputService import InputService
 
+from handle_collisions_action import handle_collision_actions
+
 def main():
 
     cast = Cast()
@@ -21,6 +23,7 @@ def main():
     script.add_action("input", ControlActorsAction(input_service))
     script.add_action("update", MoveActorsAction())
     script.add_action("output", DrawActorsAction(output_service))
+    script.add_action("update", handle_collision_actions())
     #add more scripts here, like collisions
 
     director = Director(output_service)
