@@ -52,7 +52,13 @@ class Player1:
         self.move_first_trail()
     
     def move_first_trail(self):
+        self._trail = Drawable()
         self._trails[0].move_next()
+        self._trail.set_position(self._position)
+        self._trail.set_velocity(Point(0, 0))
+        self._trail.set_text("#")
+        self._trail.set_color(self._color)
+        self.add_trail(self._trail)
 
     def set_color(self,color):
 

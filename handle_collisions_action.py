@@ -28,13 +28,13 @@ class handle_collision_actions(Action):
     def _handle_game_over(self, cast):
 
         if self._game_over:
-            bike = cast("bike")
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
             position = Point(x,y)
+            
 
             message = Drawable()
             message = Drawable()
             message.set_text("The Game is Over!")
-            message.set_postition(position)
+            message.set_position(position)
             cast.add_actor("messages",message)

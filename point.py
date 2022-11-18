@@ -11,7 +11,13 @@ class Point:
         return self._y
     
     def set_x(self, x):
-        self.x = x
+        self._x = x
     
     def set_y(self, y):
-        self.y = y
+        self._y = y
+
+    def equals(self, point):
+        is_equal = False
+        if self._x == point._x and self._y == point._y:
+            is_equal = True
+        return is_equal
