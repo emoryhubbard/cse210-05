@@ -1,5 +1,5 @@
 import constants
-from player1 import player1
+from player1 import Player1
 from player2 import player2
 from action import Action
 from point import Point
@@ -34,7 +34,7 @@ class handle_collision_actions(Action):
             y = int(constants.MAX_Y / 2)
             position = Point(x,y)
 
-            message = player1()
+            message = Player1()
             message = player2()
             message.set_text("The Game is Over!")
             message.set_postition(position)
