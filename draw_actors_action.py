@@ -6,8 +6,9 @@ class DrawActorsAction(Action):
         self._output_service = output_service
 
     def execute(self, cast):
-        player1 = cast.get_first_actor("players")
+        all_actors = cast.get_all_actors()
 
         self._output_service.clear_buffer()
-        self._output_service.draw_actor(player1)
+        for actor in all_actors:
+            self._output_service.draw_actor(actor)
         self._output_service.flush_buffer()

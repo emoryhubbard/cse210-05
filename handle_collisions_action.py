@@ -20,6 +20,7 @@ class handle_collision_actions(Action):
         bike = cast.get_first_actor("players")
         head = bike.get_actors()[0]
         trails = bike.get_actors()
+        print(len(trails))
         for trail in trails:
             if trail != head and head.get_position().equals(trail.get_position()):
                 self._game_over = True
@@ -37,4 +38,4 @@ class handle_collision_actions(Action):
             message = Drawable()
             message.set_text("The Game is Over!")
             message.set_position(position)
-            cast.add_actor("messages",message)
+            cast.add_actor("messages", message)

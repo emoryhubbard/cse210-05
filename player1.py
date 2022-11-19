@@ -23,10 +23,16 @@ class Player1:
         trail.set_velocity(Point(0, 0))
         trail.set_text("@")
         trail.set_color(self._color)
-        self.add_trail(trail)
-
-    def add_trail(self, trail):
         self._trails.append(trail)
+
+    def add_trail(self):
+        self._trail = Drawable()
+        #use previous position to generate trail there and NOT STEP ON IT
+        self._trail.set_position(self._old_position)
+        self._trail.set_velocity(Point(0, 0))
+        self._trail.set_text("#")
+        self._trail.set_color(self._color)
+        self._trails.append(self._trail)
     
     def get_color(self):
 
@@ -48,17 +54,14 @@ class Player1:
 
         x = (self._position.get_x() + self._velocity.get_x()) % constants.MAX_X
         y = (self._position.get_y() + self._velocity.get_y()) % constants.MAX_Y
+        self._old_position = self._position
         self._position = Point(x, y)
-        self.move_first_trail()
-    
+        if not self._velocity.equals(Point(0, 0)): #only add trail if it moves
+            self.move_first_trail()
+      
     def move_first_trail(self):
-        self._trail = Drawable()
         self._trails[0].move_next()
-        self._trail.set_position(self._position)
-        self._trail.set_velocity(Point(0, 0))
-        self._trail.set_text("#")
-        self._trail.set_color(self._color)
-        self.add_trail(self._trail)
+        self.add_trail()
 
     def set_color(self,color):
 

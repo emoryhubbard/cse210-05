@@ -1,6 +1,6 @@
 from cast import Cast
 from player1 import Player1
-from player2 import player2
+from player2 import Player2
 from script import Script
 from move_actors_action import MoveActorsAction
 from draw_actors_action import DrawActorsAction
@@ -15,7 +15,7 @@ def main():
 
     cast = Cast()
     cast.add_actor("players", Player1())
-    cast.add_actor("players", player2())
+    cast.add_actor("players", Player2())
     #add more actors here
 
     output_service = OutputService()
