@@ -24,15 +24,6 @@ class handle_collision_actions(Action):
         for trail in trails1:
             if trail != head1 and head1.get_position().equals(trail.get_position()):
                 self._game_over = True
-        
-        # Eastons code start
-        if head1.get_position().equals(trails2.get_position()):
-            self._game_over = True
-        
-        if head2.get_position().equals(trails1.get_position()):
-            self._game_over = True
-
-        #Eastons code end
 
         bike2 = cast.get_secound_actor("players")
         head2 = bike2.get_actors()[0]
@@ -41,6 +32,15 @@ class handle_collision_actions(Action):
         for trail in trails2:
             if trail != head2 and head2.get_position().equals(trail.get_position()):
                 self._game_over = True
+
+         # Eastons code start
+        if head1.get_position().equals(trails2.get_position()):
+            self._game_over = True
+        
+        if head2.get_position().equals(trails1.get_position()):
+            self._game_over = True
+
+        #Eastons code end
         
 
 
