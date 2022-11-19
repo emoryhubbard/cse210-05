@@ -17,4 +17,8 @@ class Script:
             results = self._actions[group].copy()
         return results
 
+    def remove_action(self, group, action):
+        if group in self._actions:
+            self._actions[group].remove(action)
+
     
