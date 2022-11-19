@@ -33,6 +33,17 @@ class handle_collision_actions(Action):
             if trail != head2 and head2.get_position().equals(trail.get_position()):
                 self._game_over = True
 
+         # Eastons code start
+        if head1.get_position().equals(trails2.get_position()):
+            self._game_over = True
+        
+        if head2.get_position().equals(trails1.get_position()):
+            self._game_over = True
+
+        #Eastons code end
+        
+
+
     def _handle_game_over(self, cast):
 
         if self._game_over:
