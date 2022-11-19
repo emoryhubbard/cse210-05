@@ -32,8 +32,6 @@ class handle_collision_actions(Action):
         for trail in trails2:
             if trail != head2 and head2.get_position().equals(trail.get_position()):
                 self._game_over = True
-        
-
 
     def _handle_game_over(self, cast):
 
