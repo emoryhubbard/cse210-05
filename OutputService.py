@@ -19,8 +19,7 @@ class OutputService:
             for member in actor.get_actors():
                 self.draw_single_actor(member)
         else:
-            for trail in actor._trails:
-                self.draw_single_actor(trail)
+            self.draw_single_actor(actor)
 
     def draw_single_actor(self, actor):
         text = actor.get_text()
